@@ -1,0 +1,240 @@
+ body div {
+    width:1020px
+}
+h1 {
+    width:500px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.7em;
+    color: blueviolet;
+}
+.indexh1 {
+    text-align: left;
+    position: relative;
+    animation-name: move;
+    animation-duration: 2s;
+}
+
+@keyframes move {
+    from   {left: 1020px}
+    to     {left: 0px}
+}
+
+@media screen and (min-width : 800px) {
+    .butt {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        padding-bottom: 30px;
+        border-bottom: solid black 3px;
+    }
+    .butt > a {
+        margin-right: 10px;
+    }
+    .market    { text-align: justify;
+        column-count: 2 ;
+        column-gap: 15px;
+        column-width: 400px;
+        column-rule-style: solid;
+        column-rule-width: 3px;
+    }
+    .mainflex{
+        display: flex;
+        flex-direction: column wrap;
+        justify-content: space-around;
+    }
+    .mainflex .box{
+        border:1px black solid;
+        width: 250px;
+        height: 400px;
+    }
+}
+@media screen and (min-width : 480px) and (max-width:800px) {
+    body div {
+        width:100%
+    }
+    .butt {
+        display: inline-flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding-bottom: 30px;
+        border-bottom: solid black 3px;
+    }
+    .butt > a{
+        width: 80px;
+    }
+    #second h2 {
+        text-align: center;
+    }
+    .mainflex{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: flex-start;
+    }
+    .mainflex .box{
+        border:1px black solid;
+        width: 49%;
+        height: 400px;
+    }
+}
+@media screen and (max-width : 480px) {
+    body div {
+        width:100%
+    }
+    .butt {
+        display: inline-flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding-bottom: 30px;
+        border-bottom: solid black 3px;
+    }
+    .butt > a{
+        width: 80px;
+    }
+    #second h2 {
+        text-align: center;
+    }
+    .mainflex{
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-around;
+    }
+    .mainflex .box{
+        border:1px black solid;
+        width: 100%;
+        height: 400px;
+    }
+}
+.pic {
+    width: 60px;
+    height: 120px;
+    background: url(notebook1.jpg) no-repeat;
+    background-size: 60px 120px;
+}
+.pic:hover {
+    transform: scale(2, 2);
+    transition: 2s ease-in;
+}
+.pic .text{
+    width: 60px;
+    height: 90px;
+    background-color: black;
+    opacity: 0;
+    padding: 15px;
+}
+.text p {
+    padding-top: 25%;
+}
+.pic:hover .text {
+    opacity: 0.8;
+    text-align: center;
+    color: white;
+}
+
+
+
+#second h2 {
+    border-bottom: solid black 3px;
+    padding-bottom: 30px;
+}
+#start {
+    display: flex;
+    flex-direction: column;
+}
+#first {
+    display: flex;
+    flex-direction: column;
+} 
+.box img:hover {
+    transform: scale(2, 2);
+    transition: 2s ease-in;
+}
+
+.box {
+    display: flex;
+    flex-flow: row wrap;
+}
+.pic1 {
+    width: 60px;
+    height: 120px;
+    background: url(tablet1.jpg) no-repeat;
+    background-size: 60px 120px;
+}
+
+.pic1:hover {
+    transform: scale(2, 2);
+    transition: 2s ease-in;
+}
+
+.box .pic1 .text{
+    width: 60px;
+    height: 90px;
+    background-color: black;
+    opacity: 0;
+    padding: 15px;
+}
+.pic1:hover .text {
+    opacity: 0.8;
+    text-align: center;
+    color: white;
+}
+
+
+
+
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+.but {
+    padding-bottom: 30px;
+}
+.index {
+    border-top: solid 3px red;
+    border-bottom: solid 3px red; 
+}
+.login {
+    display: inline-block;
+    border-top: solid 3px red;
+    border-bottom: solid 3px red;
+    margin-bottom: 30px;
+}
+
+.signup {
+    border-top: solid 3px red;
+    border-bottom: solid 3px red;
+    margin-bottom: 30px;
+}
+
+.bor {
+    border-top: solid 3px #000;
+    border-bottom: solid 3px #000;
+    padding-bottom: 30px;
+}
+
+#button button[type = submit] {
+    width: 100px;
+    height: 30px;
+    background-color: greenyellow;
+}
+
+#button button[type = reset] {
+    height: 30px;
+    width: 100px;
+    background-color: red;
+}
+
+#butt button[type = submit] {
+    width: 100px;
+    height: 30px;
+    background-color: greenyellow;
+}
+
+#butt button[type = button] {
+    height: 30px;
+    width: 100px;
+    background-color: skyblue;
+}
