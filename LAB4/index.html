@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="kor">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href = "main.css">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1 class = "indexh1">안녕하세요 마켓컬리입니다.</h1>
+        <div class ="butt">
+            <a class = "index" href="index.html">메인페이지</a>
+            <a href="login.html">로그인</a>
+            <a href="signup.html">회원가입</a>
+        </div>  
+        <h2>RECENT PRODUCT</h2>
+        <div id = "first">
+                <div id = "filter">
+                    <div>
+                        <label for="cate">Choose a category:</label><br>
+                        <select id = "cate">
+                            <option selected>All</option>
+                            <option>computer</option>
+                            <option>phone</option>
+                            <option>clothes</option>
+                            <option>gaming</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label>Enter search item:</label><br>
+                        <input id ="sear" type="text" placeholder="e.g phone">
+                    </div>    
+                    <div>
+                        <button type="button" id = "press">Filter results</button>
+                    </div>      
+                </div>
+                <div id = "product">
+                </div>
+        </div>        
+    </div>   
+    <script>
+        var counter = 1;
+        var index = 0;
+        let category = "All";
+        let searchTerm = "";
+        var prod;
+        document.addEventListener("DOMContentLoaded", loadItems);  
+        window.onscroll = () => {
+                if((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+                    loadItems();
+                }
+        }
+        function loadItems() {
+            fetch("product.json")
+        .then(response => response.json())
+        .then(post => {
+            prod = post;
+            check();})
+        .catch(eror => {console.log(eror)}) 
+        }
+        
+        function check() {
+            while (document.body.offsetHeight < window.innerHeight)
+                init();
+        }
+
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById("press").addEventListener("click", sorting);
+        })
+
+        function init() {
+            let leng = prod.products.length;
+            
+            
+            if(category === "All") {
+                if(searchTerm === "") {
+                    for(let i =0;i < leng;i++) {
+                        result(prod);
+                    } 
+                }
+                else if(searchTerm === "computer") { 
+                    leng = 2;
+                    for(let i =0;i < leng;i++) {
+                    result(prod);
+                    }
+                }
+                else if(searchTerm === "phone") { 
+                    leng = 2;
+                    index = 2;
+                    for(let i =0;i < leng;i++) {
+                    result(prod);
+                    }
+                    return;
+                }
+                else if(searchTerm === "clothes") { 
+                    leng = 2;
+                    index = 4;
+                    for(let i =0;i < leng;i++) {
+                    result(prod);
+                    }
+                    return;
+                }
+                else if(searchTerm === "gaming") { 
+                    leng = 2;
+                    index = 6;
+                    for(let i =0;i < leng;i++) {
+                    result(prod);
+                    }
+                    return;
+                }
+            }
+            else if(category === "computer" || searchTerm === "computer") { 
+                leng = 2;
+                for(let i =0;i < leng;i++) {
+                result(prod);
+                }
+                return;
+            }
+            else if(category === "phone" || searchTerm === "phone") { 
+                leng = 2;
+                index = 2;
+                for(let i =0;i < leng;i++) {
+                result(prod);
+                }
+                return;
+            }
+            else if(category === "clothes" || searchTerm === "clothes") { 
+                leng = 2;
+                index = 4;
+                for(let i =0;i < leng;i++) {
+                result(prod);
+                }
+                return;
+            }
+            else if(category === "gaming" || searchTerm === "gaming") { 
+                leng = 2;
+                index = 6;
+                for(let i =0;i < leng;i++) {
+                result(prod);
+                }
+                return;
+            }
+
+            
+            
+        }
+
+        function sorting() {
+            category = document.getElementById("cate").value;
+            searchTerm = document.getElementById("sear").value;
+            clearItem();
+            index = 0;
+            init();
+        }
+    
+
+        function result(data) {
+            var post = document.createElement("div");
+            var post1 = document.createElement("div");
+            var proinfo = document.createElement("p");
+            var proprice = document.createElement("p");
+            post.className = 'result';
+            post1.className = 'res';
+            proinfo.className = 'result2';
+            proprice.className = 'result3';
+            proinfo.innerHTML = data.products[index].info;
+            proprice.innerHTML = data.products[index].price;
+            post.style.backgroundImage = "url('" + data.products[index].name+"')";
+            post.style.backgroundRepeat = "no repeat";
+            post.style.backgroundSize = "100% 100%";
+            post.style.backgroundOrigin = "content-box";
+            post1.appendChild(proinfo);
+            post1.appendChild(proprice);
+            post.appendChild(post1);
+            document.getElementById("product").appendChild(post);
+            post.addEventListener("click", function() {
+                post1.style.opacity = "0.8";
+            });
+            index++;
+        }
+        
+        function clearItem() {
+            let items = document.getElementById("product");
+            while (items.hasChildNodes())
+                items.removeChild(items.firstChild);
+               
+        }
+
+    </script>
+</body>
+</html>

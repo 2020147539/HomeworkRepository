@@ -1,0 +1,13 @@
+{
+    "products" : [
+        {"info" : "labtop : to process works", "price" : "1000", "type" : "computer", "name" : "notebook1.jpg"}, 
+        {"info" : "tablet : to carry easily", "price" : "700", "type" : "computer", "name" : "tablet1.jpg"},
+        {"info" : "samsung : android smartphone", "price" : "1200", "type" : "phone", "name" : "smartp1.jpg"},
+        {"info" : "apple : iphone", "price" : "1600", "type" : "phone", "name" : "smartp2.jpg"},
+        {"info" : "coat : to look yourself gentle", "price" : "600", "type" : "clothes", "name" : "coat1.jpg"},
+        {"info" : "padded coat : to be warm", "price" : "300", "type" : "clothes", "name" : "padding1.jpg"},
+        {"info" : "switch : portable gaming stuff", "price" : "400", "type" : "gaming", "name" : "switch1.jpg"},
+        {"info" : "playstation : a brand new technology to play game", "price" : "500", "type" : "gaming", "name" : "plays1.jpg"}
+    ]
+
+}

@@ -1,0 +1,127 @@
+ body div {
+    width:1020px
+}
+
+h1 {
+    width:500px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.7em;
+    color: blueviolet;
+}
+.indexh1 {
+    text-align: left;
+    position: relative;
+    animation-name: move;
+    animation-duration: 2s;
+}
+
+@keyframes move {
+    from   {left: 1020px}
+    to     {left: 0px}
+}
+
+h2 {
+    padding-bottom: 30px;
+    border-bottom: 3px solid black;
+    margin-bottom: 0px;
+}
+
+#first {
+    display:inline-flex;  
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-top: 0px;
+    padding-top: 0px;
+}
+#filter {
+    width: 220px;
+    border-right: 3px solid black;
+}
+
+#cate {
+    width: 200px;
+}
+#sear {
+    width: 200px;
+}
+#sort {
+    width: 200px;
+}
+#product {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+#product div {
+    width:  300px;
+    height: 300px;
+}
+#product div:nth-of-type(2n+1) {
+    margin-right: 30px;
+}
+#product div div {
+    background-color: black;
+    color : white;
+    opacity: 0;
+    width:  300px;
+    height: 300px;
+    text-align: center; 
+}
+
+
+
+
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+.but {
+    padding-bottom: 30px;
+}
+.index {
+    border-top: solid 3px red;
+    border-bottom: solid 3px red; 
+}
+.login {
+    display: inline-block;
+    border-top: solid 3px red;
+    border-bottom: solid 3px red;
+    margin-bottom: 30px;
+}
+
+.signup {
+    border-top: solid 3px red;
+    border-bottom: solid 3px red;
+    margin-bottom: 30px;
+}
+
+.bor {
+    border-top: solid 3px #000;
+    border-bottom: solid 3px #000;
+    padding-bottom: 30px;
+}
+
+#button button[type = submit] {
+    width: 100px;
+    height: 30px;
+    background-color: greenyellow;
+}
+
+#button button[type = reset] {
+    height: 30px;
+    width: 100px;
+    background-color: red;
+}
+
+#butt button[type = submit] {
+    width: 100px;
+    height: 30px;
+    background-color: greenyellow;
+}
+
+#butt button[type = button] {
+    height: 30px;
+    width: 100px;
+    background-color: skyblue;
+}
